@@ -18,6 +18,11 @@ namespace TS {
         MOVE = "MOVE"
     }
 
+    export enum StrategyType {
+        STANDARD,
+        DEFENSIVE
+    }
+
     export enum SpellType {
         WIND = "WIND",
         SHIELD = "SHIELD",

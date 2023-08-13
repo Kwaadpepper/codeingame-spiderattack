@@ -1,7 +1,7 @@
 namespace TS {
     export class Base {
-        static baseRadius: 5000;
-        static baseAngle: 90;
+        public static baseRadius: number = 5000;
+        public static baseAngle: number = 90;
 
         id: Id;
         coord: Coord;
