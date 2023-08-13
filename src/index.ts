@@ -24,7 +24,10 @@ namespace TS {
             .filter(monster => {
                 return monster.threatFor === ThreatFor.allyBase ||
                     monster.isInBase(player.base)
-            }).sort((mA, mB) => mA.distanceFrom(player.base.coord) - mB.distanceFrom(player.base.coord))
+            }).sort((mA, mB) =>
+                mA.distanceFrom(player.base.coord) -
+                mB.distanceFrom(player.base.coord)
+            )
 
         player.heros.forEach(hero => {
             // Write an action using console.log()
@@ -33,7 +36,7 @@ namespace TS {
             // Attaquer le Premier monstre qui entre dans la base
 
             if (MonstersInBase.length) {
-                const monster = MonstersInBase.at(0) as Monster
+                const monster = (MonstersInBase.at(hero.id) ?? MonstersInBase.at(0)) as Monster
                 (hero as Ally).target(monster)
             } else {
                 const waitingPoint = (hero as Ally).waitingPoint(player.base);
